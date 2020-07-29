@@ -1,0 +1,32 @@
+~~~~~~~~~~~~~~~~~~INVENTORY~~~~~~~~~~~~~~~~~~
+
+Este proyecto se encuentra desarrollado en Laravel con motor de base de datos MySql y se recomienda utilizar el servidor Apache.
+
+Limitantes de esta versión:
+
+*Permite simular un modelo de inventarios vs compras limitado a un solo usuario.
+*Solo permite facturar una sola vez.
+*Permite guardar el nombre del producto, cantidad, precio y lote 
+
+INSTRUCCIONES Y TIPS:
+
+Debido a que el proyecto fue desarrollado en Laravel, se utilizaron los archivos de migrations para la creación de las tablas, en el archivo .env encontrará el nombre de la base de datos para que el aplicativo corra sin problemas.
+
+1. Es necesario tener instalado composer para la instalación de las librerías necesarias.
+2. Una vez instalado, se puede clonar el proyecto localmente y en la carpeta raiz del proyecto ejecutar composer install.
+3. Es importante verificar que las actualizaciones estén a la fecha, para ello puede ejecutar el comando composer update.
+4. Una vez finalizado el proceso, es necesario ejecutar el servidor (Se recomienda Apache) y la base de datos. Para crear las tablas en la base de datos, en la carpeta raiz del proyecto, puede ejecutar php artisan migrate, esto creará las tablas necesarias para la ejecución del proyecto.
+5. Luego de tener los servicios funcionando, puede ingresar a http://localhost/inventory/public/, en esta dirección encontrará el listado de los productos disponibles. En esta vista el usuario podrá navegar para realizar una compra (egreso de productos) o para agregar productos al inventario (ingreso de productos).
+6. Para agregar productos, el usuario solo debe darle click en la opción "Add Product", una vez navegue a la visual, encontrará un formulario para diligenciar los datos necesarios, este formulario debe ser diligenciado completamente, de lo contrario no podrá crear el producto. En esta vista se puede observar el listado de productos para mayor comodidad y performance.
+7. Una vez creado el producto, el usuario puede crear más productos si lo desea o puede navegar al listado de productos o puede realizar la compra de productos.
+8. Si desea comprar productos se le mostrara una visual donde se puede ver que hay en Stock y que hay en el carrito de compras en esta visual ya el usuario puede seleccionar los productos disponibles. Nota: cada vez que el usuario agrega al carrito, se va descontando el stock en el inventario.
+9. El usuario es libre de navegar en la plataforma, debido a que su información se guarda y no requiere volver a seleccionar los items que va a comprar.
+10. Luego de alistar todos los items a comprar, puede ver el costo total y dar click en la opción "Pay", esta opción le mostrará la factura de los items comprados.
+11.Si lo desea, puede cancelar la compra, esto devolverá los productos al inventario y dejará el carrito vacio.
+
+Agradezco mucho al lector que se tomo el tiempo de leer las instrucciones, aprecio su tiempo y espero que si mi proyecto puede serle útil a alguien lo pueda usar.
+
+Best regards,
+
+Javier Acosta
+Ing. Telecomunicaciones.
