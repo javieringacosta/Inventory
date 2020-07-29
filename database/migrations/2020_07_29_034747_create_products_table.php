@@ -17,7 +17,8 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('name');
             $table->unsignedBigInteger('quantity');
-            $table->string('lot_number')->unique();
+            $table->unsignedBigInteger('total')->default(0);
+            $table->string('lot_number');
             $table->date('expiration_date');
             $table->Integer('price');
             $table->timestamps();

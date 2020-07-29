@@ -13,9 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'ProductController@index'); //List
-Route::get('user/products', 'ProductController@create'); //Create Products
+Route::get('/', 'ProductController@index')->name('index'); //List
+Route::get('admin/products', 'ProductController@create')->name('admin.products'); //Create Products
 Route::post('products', 'ProductController@store')->name('products.store'); //Save Products
-Route::post('shopping', 'ShoppingCartController@index'); //List  
+Route::get('user/shopping', 'ShoppingCartController@index')->name('user.shopping'); //List  
+Route::post('user/shopping', 'ShoppingCartController@store')->name('shopping.add'); //List  
+Route::get('user/shoppings/cart', 'ShoppingCartController@pay')->name('shopping.pay'); //List  
+Route::get('user/shoppings/cancel', 'ShoppingCartController@cancel')->name('shopping.cancel'); //List  
 
 

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Products</title>
+    <title>Shopping Cart</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -14,40 +14,45 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-8 mx-auto">
-                <h2>Products:</h2>
+                <h2>Bill:</h2>
                 <br>
                 <table class="table">
                     <thead>
                         <tr>
+                           <th>ID</th>   
                            <th>Name</th>   
                            <th>Quantity</th>   
-                           <th>Lot Number</th>   
-                           <th>Expiration Date</th>   
                            <th>Price</th>   
                        </tr>
                    </thead>
                    <tbody>
-                    @foreach($products as $product)
+                    @foreach($shoppingCart as $shopp)
                     <tr>
-                        <td>{{ $product->name }}</td>
-                        <td>{{ $product->quantity }}</td>
-                        <td>{{ $product->lot_number }}</td>
-                        <td>{{ $product->expiration_date }}</td>
-                        <td>{{ $product->price }}</td>
+                        <td>{{ $shopp->productos[0]->id }}</td>
+                        <td>{{ $shopp->productos[0]->name }}</td>
+                        <td>{{ $shopp->quantity }}</td>
+                        <td>{{ $shopp->cost }}</td>
                     </tr>
                     @endforeach
                 </tbody>    
             </table>
+            <label>Total: $</label><label id='total'>{{$totalCant}}   </label>
+            <br>
             <div class="btn-group" role="group" aria-label="Basic example">
-                <form action="{{ route('admin.products')}}" method="GET">
+                <form action="{{ route('index')}}" method="GET">
+                  <button type="submit" class="btn btn-secondary">List Products</button>
+              </form>
+              <form action="{{ route('admin.products')}}" method="GET">
                   <button type="submit" class="btn btn-secondary">Add Products</button>
               </form>
               <form action="{{ route('user.shopping')}}" method="GET">
-                  <button type="submit" class="btn btn-secondary">Buy Products</button>
+                  <button type="submit" class="btn btn-secondary">Buy More Products</button>
               </form>
           </div>
       </div>
   </div>
 </div>
+</div>
 </body>
+
 </html>

@@ -14,7 +14,7 @@ class ProductController extends Controller
      */
     public function index(){
 
-        $products= Product::latest()->get();
+        $products= Product::where('quantity','<>',0)->latest()->get();
 
         return view('products.index',[
             'products' => $products
@@ -28,7 +28,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $products= Product::latest()->get();
+        $products= Product::where('quantity','<>',0)->latest()->get();
 
         return view('products.createProduct',[
             'products' => $products
@@ -53,6 +53,7 @@ class ProductController extends Controller
         Product::create([
             'name'=> $request->name,
             'quantity'=> $request->quantity,
+            'total'=> $request->quantity,
             'lot_number'=> $request->lot_number,
             'expiration_date'=> $request->expiration_date,
             'price'=> $request->price,

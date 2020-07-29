@@ -16,8 +16,9 @@ class CreateShoppingCartsTable extends Migration
         Schema::create('shopping_carts', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->unsignedBiginteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBiginteger('quantity');
+            $table->unsignedBiginteger('produc_id');
+            $table->unsignedBiginteger('cost');
             $table->enum('status',['active','deleted'])->default('active');
 
         });

@@ -10,6 +10,7 @@ class Product extends Model
 		'id',
 		'name',
 		'quantity',
+		'total',
 		'lot_number',
 		'expiration_date',
 		'price',
@@ -17,7 +18,4 @@ class Product extends Model
 		'updated_at'
 	];
 
-    public function user(){
-        return $this->belongsTo(User::class);
-    }
 }
